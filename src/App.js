@@ -11,6 +11,9 @@ const App = () => {
     menuHero:"",
   });
   const[categories,setCategories] = React.useState([]);
+  const[products,setProducts] = React.useState([]);
+
+
 
   const fetchSanityData = async () =>{
     const response = await fetch(sanityUrl, {
@@ -26,13 +29,25 @@ const App = () => {
     setCategories(data.allCategory)
   };
 
-  console.log(siteSettings, categories)
-  React.useEffect(()=>fetchSanityData(),[]);
+    const fetchProducts = async () => {
+      const response = await fetch('/products');
+      const data = await response.json();
+      setProducts(data)
+    }
+
+
+  console.log(products)
+
+  React.useEffect(()=>{
+    fetchSanityData();
+    fetchProducts();
+  }, []);
+
 
   return(
   <>
     <Header siteSettings={siteSettings}/>
-    <Main siteSettings={siteSettings} categories={categories}/>
+    <Main siteSettings={siteSettings} categories={categories} products={products}/>
   </>
   );
 };

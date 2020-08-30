@@ -151,12 +151,18 @@ header {
   filter: brightness(100);
 }
 
+.hidden {
+  display: none;
+}
+
 img.hidden {
   opacity: 0;
 }
 
 #back-to-main-menu {
-  display: none;
+  position: absolute;
+  top: 2rem;
+  left: 0px;
 }
 
 #categories.carousel ~ #back-to-main-menu {
@@ -235,7 +241,7 @@ main {
   margin: 0;
 }
 
-#categories {
+.categoriesclass {
   margin: 200px 150px 0 150px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
