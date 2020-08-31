@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Header from "./components/Header";
 import Main from "./components/Main";
 import {sanityUrl, sanityQuery} from "./data/Sanity"
 
@@ -46,7 +45,6 @@ const App = () => {
 
   return(
   <>
-    <Header siteSettings={siteSettings}/>
     <Main siteSettings={siteSettings} categories={categories} products={products}/>
   </>
   );
